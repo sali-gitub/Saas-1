@@ -1,33 +1,80 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="scripts/config.js" defer></script>
-    <script src="scripts/script.js" defer></script>
-    <script src="scripts/main.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>DashPilot</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <h1>AzerType lol</h1>
-    </header>
-    <main>
-        <div>
-            <h2>Le jeu</h2>
-            <p>Un petit texte</p>
-        </div>
-        <div>
-            <h2>Une autre div</h2>
-            <p>Un autre texte</p>
-            <button id="monBouton">Cliquez-moi !</button>
-        </div>
-    </main>
+  <div class="container">
+    <h1>DashPilot</h1>
 
-    <footer>
-        @Copyright : OpenClassrooms.
-    </footer>
+    <div class="main-sections">
+      <!-- Suivi CA -->
+      <section class="section ca-section">
+        <h2>Suivi CA</h2>
+        <canvas id="ca-chart"></canvas>
+      </section>
+
+      <!-- Devis -->
+      <section class="section devis-section">
+        <h2>Suivi des devis</h2>
+
+        <div class="devis-content">
+          <!-- Kanban -->
+          <div class="kanban">
+            <div id="envoyes-column" class="kanban-column">
+              <h3>📤 Envoyés</h3>
+            </div>
+            <div id="signes-column" class="kanban-column">
+              <h3>📝 Signés</h3>
+            </div>
+            <div id="encours-column" class="kanban-column">
+              <h3>🚧 En cours</h3>
+            </div>
+          </div>
+
+          <!-- Formulaire d'ajout -->
+          <div class="devis-form">
+            <h3>Ajouter un devis</h3>
+
+            <label for="devis-client">Client :</label>
+            <select id="devis-client">
+              <option value="" disabled selected>-- choisir --</option>
+            </select>
+
+            <div id="new-client-wrapper" style="display:none;">
+              <input type="text" id="new-client-name" placeholder="Nouveau client" />
+            </div>
+
+            <label for="devis-name">Nom du devis :</label>
+            <input type="text" id="devis-name" placeholder="Nom du devis" />
+
+            <label for="devis-amount">Montant (€) :</label>
+            <input type="number" id="devis-amount" placeholder="Montant" />
+
+            <label for="devis-status">Statut :</label>
+            <select id="devis-status">
+              <option value="envoyes">Envoyés</option>
+              <option value="signes">Signés</option>
+              <option value="encours">En cours</option>
+            </select>
+
+            <button id="add-devis-btn">Ajouter</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clients -->
+      <section class="section clients-section">
+        <h2>Clients</h2>
+        <div id="clients-list" class="clients-list"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
