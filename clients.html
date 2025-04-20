@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>DashPilot - Gestion Clients</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">Dashboard</a></li>
+      <li><a href="clients.html" class="active">Clients</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Gestion des Clients</h1>
+
+    <div class="clients-manager">
+      <div class="clients-rectangle">
+        <div id="clients-list" class="clients-list"></div>
+      </div>
+
+      <button id="new-client-btn" class="primary-btn">Nouveau client</button>
+
+      <form id="client-form" class="client-form hidden">
+        <input type="text" id="client-lastname" placeholder="Nom" required />
+        <input type="text" id="client-firstname" placeholder="Prénom" required />
+        <input type="tel" id="client-phone" placeholder="Téléphone" required />
+        <input type="email" id="client-email" placeholder="Email" required />
+        <input type="text" id="client-address" placeholder="Adresse postale" required />
+        <button type="submit" class="primary-btn">Enregistrer</button>
+        <button type="button" id="cancel-btn" class="secondary-btn">Annuler</button>
+      </form>
+    </div>
+
+  <script src="clients.js"></script>
+
+</body>
+</html>
+</html>
